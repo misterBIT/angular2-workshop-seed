@@ -3,7 +3,9 @@
 This repository holds a seed based on [angular2-starter](https://github.com/angular/angular2-seed/),
 
 The "github browser" app in the original was removed and only a very bare "home" route exists for the basic module/component/route boilerplate 
-The simple example app that was here before was moved to [the samples repo](https://github.com/misterBIT/angular2-workshop-samples) 
+The simple example app that was here before was moved to [the samples repo](https://github.com/misterBIT/angular2-workshop-samples)
+
+Another simple demo app built on top of this seed has moved to [it's own repo here](https://github.com/misterBIT/angular2-workshop-shop)
 
 ## Prerequisites
 
