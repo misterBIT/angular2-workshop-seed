@@ -7,6 +7,7 @@
             <ul class="nav navbar-nav">
                 <li><a routerLinkActive="active" routerLink="shop">Shop</a></li>
                 <li *ngIf="auth.isLoggedIn"><a routerLinkActive="active" routerLink="shopAdmin">Shop Admin</a></li>
+                <li><a routerLinkActive="active" routerLink="pet">Pets</a></li>
                 <!-- ADD NAVIGATION ITEMS HERE-->
             </ul>
             <ul class="nav navbar-nav pull-right">
@@ -20,7 +21,7 @@
         <router-outlet></router-outlet>
     </section>
 
-    <div class="navbar navbar-fixed-bottom text-center">
+    <footer>
         <a href="https://github.com/misterBIT/angular2-workshop-seed">Angular 2 Seed</a> by misterBIT
-    </div>
+    </footer>
 </div>

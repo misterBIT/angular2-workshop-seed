@@ -12,11 +12,13 @@ import {ShopListResolver} from "./shop-list.resolver";
 import {StoreListItemComponent} from "./shop-list-item";
 import {ShopAdminListComponent} from "./shop-admin-list.component";
 import {ShopItemEditComponent} from "./shop-item-edit-component";
+import {petModule} from "../pet/pet.module";
+
 @NgModule({
 	providers: [ShopService, ShopListResolver],
 	declarations: [ShopFrontComponent, ShopListComponent, StoreListItemComponent, ShopItemDetailComponent, ShoppingCartCompoennt,
 		ShopAdminComponent, ShopAdminListComponent, ShopItemEditComponent],
-	imports: [SharedModule, RouterModule.forChild(shopRoutes)],
+	imports: [SharedModule, RouterModule.forChild(shopRoutes), petModule],
 	exports: [ShopFrontComponent, ShopAdminComponent],
 })
 export class shopModule {
