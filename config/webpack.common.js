@@ -13,50 +13,39 @@ module.exports = {
 		new CopyWebpackPlugin([{from: 'public/', to: '.'}]),
 	],
 	module: {
-		preLoaders: [
-			{
-				test: /\.ts$/,
-				exclude: [/node_modules/, /\.spec\.ts$/],
-				loader: "tslint"
-			}
-		],
-		loaders: [
-			// .ts files for TypeScript
+		rules: [
+			{enforce: 'pre', test: /\.ts$/, exclude: [/node_modules/, /\.spec\.ts$/], loader: "tslint-loader"},
 			{test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader']},
 			{test: /\.css$/, loaders: ['to-string-loader', 'css-loader']},
-			{test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},
-			{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
-			{test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
-			{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
-			{test: /\.scss$/, loaders: ["to-string-loader", "css", 'resolve-url', "sass"]},
+			{test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,loader: 'url-loader?limit=10000&mimetype=application/font-woff'},
+			{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream'},
+			{test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader'},
+			{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml'},
+			{test: /\.scss$/, loaders: ["to-string-loader", "css-loader", 'resolve-url-loader', "sass-loader"]},
 			{test: /\.html$/, loader: 'raw-loader'}
 		]
 	},
 	devtool: 'cheap-module-source-map',
 	cache: true,
-	debug: true,
 	output: {
 		filename: '[name].bundle.js',
 		sourceMapFilename: '[name].map',
 		chunkFilename: '[id].chunk.js'
 	},
-
 	resolve: {
-		root: [path.join(__dirname, 'src')],
-		extensions: ['', '.js', '.ts']
+		modules: [path.join(__dirname, 'src'), "node_modules"],
+		extensions: ['.js', '.ts']
 	},
-
 	devServer: {
 		historyApiFallback: true,
-		watchOptions: {aggregateTimeout: 300, poll: 1000}
+		// watchOptions: {aggregateTimeout: 300, poll: 1000} //uncomment this if your old windows does not help webpack to detect file changes
 	},
-
 	node: {
-		global: 1,
+		global: true,
 		crypto: 'empty',
-		module: 0,
-		Buffer: 0,
-		clearImmediate: 0,
-		setImmediate: 0
+		module: false,
+		Buffer: false,
+		clearImmediate: false,
+		setImmediate: false
 	}
 };

@@ -5,21 +5,14 @@
         "outDir": "dist",
         "rootDir": ".",
         "sourceMap": true,
+        "noEmitHelpers": true,
+        "importHelpers":true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "moduleResolution": "node"
     },
     "exclude": [
         "node_modules"
-    ],
-    "types": [
-        "jasmine",
-        "webpack",
-        "source-map",
-        "uglifyjs",
-        "core-js",
-        "node",
-        "socket.io-client"
     ],
     "awesomeTypescriptLoaderOptions": {
         "useWebpackText": true

@@ -22,7 +22,7 @@ We recommend [nvm](https://github.com/creationix/nvm) for managing multiple vers
 
  WINDOWS ONLY run to install npm script dependencies as global 
     ````
-    npm install -g webpack@2.1.0-beta.22 webpack-dev-server@2.1.0-beta.4 typescript@2.0.2
+    npm install -g webpack webpack-dev-server typescript
     ````
     
 ## Create a new project based on this seed
@@ -80,6 +80,6 @@ You're ready to write your application.
 npm scripts defined in the `package.json`:
 
 * `npm start` - runs the webpack compiler w/ dev-server, compiles changes delta to in memory-fs on the fly.
-* `npm test` - to run tests (src/**/*.spec.ts) in Karama
+* `npm test` - to run tests (src/**/*.spec.ts) in Karma
 * `npm run build` - runs the webpack compiler to create production artifacts in dist folder.
 * `npm run tdd` - to run test in continuous watch mode (reruns all tests on change§0

@@ -1,6 +1,5 @@
 .idea
-typings/**
 node_modules
 link-checker-results.txt
 **/*npm-debug.log.*
-dist/**
+/dist
